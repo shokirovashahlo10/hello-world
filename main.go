@@ -1,42 +1,38 @@
-
-
-import "fmt"
 package main
 
 import (
-"awesomeProject/internal/commission"
-"fmt"
+	"awesomeProject3/internal/commission"
+	"fmt"
 )
 
 func main() {
+	var sName, sLast string // Отправитель
+	var rName, rLast string // Получатель
+	var card string
 	var amount int64
-	var cardType int
 
-	fmt.Println("=== Перевод средств ===")
-	fmt.Print("Введите сумму перевода: ")
+	fmt.Println("Введите данные:")
+	fmt.Print("Имя Фамилия отправителя: ")
+	fmt.Scan(&sName, &sLast)
+
+	fmt.Print("Имя Фамилия получателя: ")
+	fmt.Scan(&rName, &rLast)
+
+	fmt.Print("Номер карты (16 цифр): ")
+	fmt.Scan(&card)
+
+	fmt.Print("Сумма: ")
 	fmt.Scan(&amount)
 
-	fmt.Print("Тип карты (1 - Alif, 2 - Другая): ")
-	fmt.Scan(&cardType)
-
-	isAlif := cardType == 1
-
-	comm, err := commission.Calculate(amount, isAlif)
-	if err != nil {
-		fmt.Printf("\n❌ Ошибка: %v\n", err)
-		return
-	}
-
-	total := amount + comm
-
-
+	// Печатаем чек
 	fmt.Println("\n======= Alif Mobi =======")
-	fmt.Println("Услуга:     Перевод")
-	fmt.Printf("Сумма:      %d сум\n", amount)
-	fmt.Printf("Комиссия:   %d сум\n", comm)
+	fmt.Printf("Отправитель: %s %s\n", sLast, sName)
+	fmt.Printf("Получатель:  %s %s\n", rLast, rName)
+	fmt.Printf("Карта:       %s\n", commission.MaskCard(card))
 	fmt.Println("-------------------------")
-	fmt.Printf("ИТОГО:      %d сум\n", total)
-	fmt.Println("Статус:     Исполнено ✅")
+	fmt.Printf("Сумма:       %d сум\n", amount)
+	fmt.Printf("Транзакция:  №%d\n", commission.GenID())
+	fmt.Printf("Дата:        %s\n", commission.GetTime())
+	fmt.Println("Статус:      Исполнено ✅")
 	fmt.Println("=========================")
 }
-
