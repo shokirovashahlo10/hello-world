@@ -17,6 +17,7 @@ func Calculate(amount int64, isAlif bool) (int64, error) {
 	if isAlif {
 		return 0, nil
 	}
+	fmt.Println(amount)
 	return (amount * 29) / 10000, nil
 }
 
