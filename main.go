@@ -2,13 +2,17 @@ package main
 
 import (
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"awesomeProject3/internal/commission"
 =======
 >>>>>>> c72f24fe2fed03af4ef9f7b0fac309fd8ac7a984
+=======
+>>>>>>> origin/main
 	"fmt"
 )
 
 func main() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	var sName, sLast string // Отправитель
 	var rName, rLast string // Получатель
@@ -40,6 +44,8 @@ func main() {
 	fmt.Println("Статус:      Исполнено ✅")
 	fmt.Println("=========================")
 =======
+=======
+>>>>>>> origin/main
 	fmt.Println("Hello Alif")
 	var name string = "iphone 13 pro"
 	var brand string = "apple "
@@ -55,5 +61,8 @@ func main() {
 	fmt.Printf("рассрочка : 12 мес → %.0f сум/мес\n", paymente)
 	fmt.Println("===================")
 
+<<<<<<< HEAD
 >>>>>>> c72f24fe2fed03af4ef9f7b0fac309fd8ac7a984
+=======
+>>>>>>> origin/main
 }
